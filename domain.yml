@@ -1,0 +1,39 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - venmo_request
+
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_default
+- action_venmo_request
+
+templates:
+  utter_greet:
+  - text: "Hey! How are you?"
+  - text: "Hello! How's it going?"
+  - text: "Hey, how ya doing?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_default:
+  - text: "Sorry, my maker hasn't imbued me with the ability to handle this yet."
