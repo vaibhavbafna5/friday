@@ -1,3 +1,15 @@
+slots:
+  person:
+    type: text
+  dollar_amount:
+    type: float
+    min_value: 0.0
+    max_value: 100.0
+
+entities:
+- person
+- dollar_amount
+
 intents:
   - greet
   - goodbye
@@ -6,6 +18,7 @@ intents:
   - mood_great
   - mood_unhappy
   - venmo_request
+  - venmo_pay
 
 actions:
 - utter_greet
@@ -14,7 +27,10 @@ actions:
 - utter_happy
 - utter_goodbye
 - utter_default
+- utter_venmo_pay_confirmation
+- utter_venmo_request_confirmation
 - action_venmo_request
+- action_venmo_pay
 
 templates:
   utter_greet:
@@ -37,3 +53,15 @@ templates:
 
   utter_default:
   - text: "Sorry, my maker hasn't imbued me with the ability to handle this yet."
+
+  utter_venmo_pay_confirmation:
+  - text: "Sure, pay {person} {dollar_amount}?"
+  - text: "Real quick, just to be sure - you want me to pay {person} {dollar_amount}?"
+  - text: "Real quick, just to confirm - you want me to give {person} {dollar_amount}?"
+
+  utter_venmo_request_confirmation:
+  - text: "Sure, request {dollar_amount} from {person}?"
+  - text: "Should I go ahead and request {dollar_amount} from {person}?"
+  - text: "Sure, you want me to request {dollar_amount} from {person}"
+  - text: "Real quick, just to be sure - you want {dollar_amount} from {person}?"
+
