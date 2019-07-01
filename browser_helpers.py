@@ -1,4 +1,4 @@
-# Copyright (C) 2017 Google Inc.
+# Copyright (C) 2018 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,4 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Samples for Google Assistant gRPC API."""
+import os.path
+import tempfile
+import webbrowser
+
+ASSISTANT_HTML_FILE = 'google-assistant-sdk-screen-out.html'
+
+
+class SystemBrowser(object):
+    def __init__(self):
+        self.tempdir = tempfile.mkdtemp()
+        self.filename = os.path.join(self.tempdir, ASSISTANT_HTML_FILE)
+
+    def display(self, html):
+        with open(self.filename, 'wb') as f:
+            f.write(html)
+        webbrowser.open(self.filename, new=0)
+
+
+system_browser = SystemBrowser()

@@ -112,3 +112,11 @@
 - Can you request [Emily](person) [2.00](dollar_amount)?
 - Can you request [Ananya](person) [22.29](dollar_amount)?
 - Can you request [Gajendra Bafna](person) [0.48](dollar_amount)?
+
+
+## intent:open_google_channel
+- open a channel to Google
+- I want to talk to Google
+- Pull up Google
+- Open Google
+- Let me talk to Google for a second

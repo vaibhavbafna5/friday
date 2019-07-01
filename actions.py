@@ -72,3 +72,19 @@ class ActionVenmoPay(Action):
             execute_venmo_pay(people[person_name], dollar_amount)
             dispatcher.utter_message(msg)
 
+
+class ActionOpenGoogleChannel(Action):
+
+    def name(self) -> Text:
+        return "action_open_google_channel"
+
+    def run(self, dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        msg = "Hello, Google Assistant is opening now"
+        dispatcher.utter_message(msg)
+
+        assistant_command = "python textinput.py --device-model-id thursday-6b92e-thursday-p1zrh6 --device-id thursday"
+        os.system(assistant_command)
+

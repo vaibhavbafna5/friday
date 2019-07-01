@@ -19,6 +19,7 @@ intents:
   - mood_unhappy
   - venmo_request
   - venmo_pay
+  - open_google_channel
 
 actions:
 - utter_greet
@@ -31,6 +32,7 @@ actions:
 - utter_venmo_request_confirmation
 - action_venmo_request
 - action_venmo_pay
+- action_open_google_channel
 
 templates:
   utter_greet:
@@ -64,4 +66,9 @@ templates:
   - text: "Should I go ahead and request {dollar_amount} from {person}?"
   - text: "Sure, you want me to request {dollar_amount} from {person}"
   - text: "Real quick, just to be sure - you want {dollar_amount} from {person}?"
+
+  utter_opening_google_channel:
+  - text: "Sure, opening a line to Google now"
+  - text: "Got it, opening a channel to Google now"
+  - text: "Alright, opening a channel to Google"
 
