@@ -114,9 +114,18 @@
 - Can you request [Gajendra Bafna](person) [0.48](dollar_amount)?
 
 
-## intent:open_google_channel
-- open a channel to Google
-- I want to talk to Google
-- Pull up Google
-- Open Google
-- Let me talk to Google for a second
+## intent:ask_google
+- ask Google [what the weather is today](query)
+- ask Google [when the Warriors game is](query)
+- ask Google [what time it is](query)
+- ask Google [what time game 6 of the NBA finals is](query)
+- ask Google [how long avengers endgame is](query)
+- ask Google [where Oracle Arena is](query)
+
+- ask Big Brother [what time the Michigan game is](query)
+- ask Big Brother [where Contraband is](query)
+
+
+- check Google for [the nearest coffee shop](query)
+- check Google [what time sunset is](query) 
+- check Google for [the weather](query)

@@ -5,10 +5,13 @@ slots:
     type: float
     min_value: 0.0
     max_value: 100.0
+  query:
+    type: text
 
 entities:
 - person
 - dollar_amount
+- query
 
 intents:
   - greet
@@ -19,7 +22,7 @@ intents:
   - mood_unhappy
   - venmo_request
   - venmo_pay
-  - open_google_channel
+  - ask_google
 
 actions:
 - utter_greet
@@ -32,7 +35,7 @@ actions:
 - utter_venmo_request_confirmation
 - action_venmo_request
 - action_venmo_pay
-- action_open_google_channel
+- action_ask_google
 
 templates:
   utter_greet:

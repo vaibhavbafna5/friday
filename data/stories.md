@@ -18,5 +18,5 @@
    - action_venmo_pay
 
 ## talk to Google
-* open_google_channel
-   - action_open_google_channel
+* ask_google
+   - action_ask_google
