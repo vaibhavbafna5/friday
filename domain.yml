@@ -57,7 +57,7 @@ templates:
   - text: "Bye"
 
   utter_default:
-  - text: "Sorry, my maker hasn't imbued me with the ability to handle this yet."
+  - text: "Sorry, sir, you haven't imbued me with the ability to handle this yet."
 
   utter_venmo_pay_confirmation:
   - text: "Sure, pay {person} {dollar_amount}?"

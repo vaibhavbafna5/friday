@@ -1,12 +1,3 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/core/actions/#custom-actions/
-
-
-# This is a simple example for a custom action which utters "Hello World!"
-
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
@@ -94,7 +85,7 @@ def ask_google_assistant(query):
 
 google_assistant = start_google_assistant()
 
-# action classes 
+# ACTION CLASSES 
 
 class ActionVenmoRequest(Action):
     
@@ -139,7 +130,6 @@ class ActionVenmoPay(Action):
             # execute payment
             execute_venmo_pay(people[person_name], dollar_amount)
             dispatcher.utter_message(msg)
-
 
 class ActionOpenGoogleChannel(Action):
 
