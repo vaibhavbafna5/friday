@@ -11,12 +11,17 @@
 - what's up
 - howdy
 - ayyo
+- hey Friday, you up?
 
 ## intent:goodbye
 - bye
 - goodbye
 - see you around
 - see you later
+- catch ya later
+- adios
+- deuces
+- peace
 
 ## intent:affirm
 - yes
@@ -125,7 +130,11 @@
 - ask Big Brother [what time the Michigan game is](query)
 - ask Big Brother [where Contraband is](query)
 
-
 - check Google for [the nearest coffee shop](query)
 - check Google [what time sunset is](query) 
 - check Google for [the weather](query)
+
+- Question - [how old is Lebron James](query)?
+- Question - [what's the capital of Florida](query)?
+- Question - [where is Apple headquarters](query)?
+- Question - [what's Tesla stock trading at today](query)?

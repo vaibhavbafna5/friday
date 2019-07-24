@@ -36,12 +36,15 @@ actions:
 - action_venmo_request
 - action_venmo_pay
 - action_ask_google
+- action_conversation
 
 templates:
   utter_greet:
   - text: "Hey! How are you?"
   - text: "Hello! How's it going?"
   - text: "Hey, how ya doing?"
+  - text: "Hello sir, hope your day hasn't been too awful"
+  - text: "Welcome back sir"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
@@ -57,7 +60,8 @@ templates:
   - text: "Bye"
 
   utter_default:
-  - text: "Sorry, sir, you haven't imbued me with the ability to handle this yet."
+  - text: "Sorry sir, you haven't given me the ability to handle this yet"
+  - text: "I'm sorry sir, but it appears that I'm short-circuiting"
 
   utter_venmo_pay_confirmation:
   - text: "Sure, pay {person} {dollar_amount}?"
@@ -69,9 +73,3 @@ templates:
   - text: "Should I go ahead and request {dollar_amount} from {person}?"
   - text: "Sure, you want me to request {dollar_amount} from {person}"
   - text: "Real quick, just to be sure - you want {dollar_amount} from {person}?"
-
-  utter_opening_google_channel:
-  - text: "Sure, opening a line to Google now"
-  - text: "Got it, opening a channel to Google now"
-  - text: "Alright, opening a channel to Google"
-

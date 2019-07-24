@@ -1,5 +1,5 @@
 ## fallback
-- utter_default
+- action_conversation
 
 ## entry
 * greet

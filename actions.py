@@ -8,6 +8,7 @@ import venmo
 import click
 import logging
 import json
+import requests
 
 import google.auth.transport.grpc
 import google.auth.transport.requests
@@ -144,3 +145,17 @@ class ActionOpenGoogleChannel(Action):
         response = ask_google_assistant(query)
         dispatcher.utter_message(response)
 
+class ActionConversation(Action):
+
+    def name(self) -> Text:
+        return "action_conversation"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+    tracker: Tracker,
+    domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message("conversation engaged")
+        url = "http://localhost:8080/" + "cakechat_api/v1/actions/get_response"
+        print(tracker.latest_message['text'])
+        r = requests.post(url, json={'context': [tracker.latest_message['text']], 'emotion': 'anger'})
+        dispatcher.utter_message(r.text.split(":")[1])

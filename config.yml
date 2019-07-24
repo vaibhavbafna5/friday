@@ -10,4 +10,6 @@ policies:
   - name: KerasPolicy
   - name: MappingPolicy
   - name: FallbackPolicy
-    fallback_action_name: 'utter_default' 
+    nlu_threshold: 0.88
+    core_threshold: 0.88
+    fallback_action_name: 'action_conversation'
