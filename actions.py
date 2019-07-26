@@ -9,6 +9,7 @@ import click
 import logging
 import json
 import requests
+import collections
 
 import google.auth.transport.grpc
 import google.auth.transport.requests
@@ -27,6 +28,9 @@ people = {
     'Ryan Ma': 6266230819,
     'Ryan Lieu': 2068835878,
 }
+
+# conversation history
+conversation_history = collections.deque([], maxlen=3)
 
 # venmo helper functions
 def execute_venmo_request(phone_number, amount):
@@ -154,8 +158,19 @@ class ActionConversation(Action):
     tracker: Tracker,
     domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message("conversation engaged")
+        # update conversation history
+        conversation_history.append(tracker.latest_message['text'])
+
+        # conversation model api request
         url = "http://localhost:8080/" + "cakechat_api/v1/actions/get_response"
         print(tracker.latest_message['text'])
-        r = requests.post(url, json={'context': [tracker.latest_message['text']], 'emotion': 'anger'})
-        dispatcher.utter_message(r.text.split(":")[1])
+        r = requests.post(url, json={'context': [tracker.latest_message['text']], 'emotion': 'neutral'})
+
+        # return conversation model response
+        print("CONVERSATION RESPONSE: ", r.text)
+        conversation_resp = r.text.split(":")[1][1:-3]
+
+        conversation_history.append(conversation_resp)
+        print("CONVERSATION HISTORY: ", conversation_history)
+
+        dispatcher.utter_message(conversation_resp)
