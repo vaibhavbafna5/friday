@@ -158,16 +158,19 @@ class ActionConversation(Action):
     tracker: Tracker,
     domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
+
         # update conversation history
         conversation_history.append(tracker.latest_message['text'])
 
+        print("TRACKER EVENTS HERE: ", tracker.events)
+
         # conversation model api request
         url = "http://localhost:8080/" + "cakechat_api/v1/actions/get_response"
-        print(tracker.latest_message['text'])
-        r = requests.post(url, json={'context': [tracker.latest_message['text']], 'emotion': 'neutral'})
+        # print(tracker.latest_message['text'])
+        r = requests.post(url, json={'context': list(conversation_history), 'emotion': 'anger'})
 
         # return conversation model response
-        print("CONVERSATION RESPONSE: ", r.text)
+        # print("CONVERSATION RESPONSE: ", r.text)
         conversation_resp = r.text.split(":")[1][1:-3]
 
         conversation_history.append(conversation_resp)
