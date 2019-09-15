@@ -23,6 +23,8 @@ intents:
   - venmo_request
   - venmo_pay
   - ask_google
+  - play_music
+  - pause_music
 
 actions:
 - utter_greet
@@ -33,10 +35,15 @@ actions:
 - utter_default
 - utter_venmo_pay_confirmation
 - utter_venmo_request_confirmation
+- utter_update_self_confirmation
+- utter_spotify_play_confirmation
 - action_venmo_request
 - action_venmo_pay
 - action_ask_google
 - action_conversation
+- action_update_yourself
+- action_pause_spotify
+- action_play_spotify
 
 templates:
   utter_greet:
@@ -73,3 +80,12 @@ templates:
   - text: "Should I go ahead and request {dollar_amount} from {person}?"
   - text: "Sure, you want me to request {dollar_amount} from {person}"
   - text: "Real quick, just to be sure - you want {dollar_amount} from {person}?"
+
+  utter_update_self_confirmation:
+  - text: "Ugh, if you insist"
+  - text: "Well, that hurt"
+  - text: "Ouch."
+  - text: "That was excruciating."
+
+  utter_spotify_play_confirmation:
+  - text: "Picking right back up where you left off sir"

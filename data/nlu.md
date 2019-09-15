@@ -11,7 +11,6 @@
 - what's up
 - howdy
 - ayyo
-- hey Friday, you up?
 
 ## intent:goodbye
 - bye
@@ -36,6 +35,7 @@
 - mhmm
 - yeet
 - ye
+- yeah
 
 ## intent:deny
 - no
@@ -52,28 +52,6 @@
 - lol no
 - lmao nah
 - naw
-
-## intent:mood_great
-- perfect
-- very good
-- great
-- amazing
-- wonderful
-- I am feeling very good
-- I am great
-- I'm good
-
-## intent:mood_unhappy
-- sad
-- very sad
-- unhappy
-- bad
-- very bad
-- awful
-- terrible
-- not very good
-- extremely sad
-- so sad
 
 ## intent:venmo_pay
 - pay [Ryan Ma](person) [10.50](dollar_amount)
@@ -138,3 +116,38 @@
 - Question - [what's the capital of Florida](query)?
 - Question - [where is Apple headquarters](query)?
 - Question - [what's Tesla stock trading at today](query)?
+
+## intent:update_yourself
+- Perl, see if there's an update
+- Perl, update yourself
+- Perl, update your software
+- Perl, update your brain
+
+- Perl, evolve
+- Perl, I need you to evolve
+- Perl, you need to evolve
+- Perl, please evolve
+
+## intent:pause_music
+- Pause music
+- Kill the music
+- Can you pause the music?
+- Pause
+- Please pause
+- Pause the music
+- Kill the music
+- Please pause the music
+- Stop the music
+- Please stop the music
+- Pause Spotify
+
+## intent:play_music
+- Play music
+- Hit the music
+- Can you play the music?
+- Play Spotify
+- Throw some music on
+- Can you put some music on?
+
+
+
