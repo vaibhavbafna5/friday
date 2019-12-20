@@ -2,12 +2,15 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from textinput import SampleTextAssistant
+from difflib import SequenceMatcher
 
 import os
 import venmo
 import json
 import requests
 import collections
+import pickle
+import datetime
 
 from Spotify import SpotifyAgent
 from Google import GoogleAssistant
@@ -30,7 +33,6 @@ def execute_venmo_request(phone_number, amount):
 def execute_venmo_pay(phone_number, amount):
     payment_body = 'venmo pay {} {} "you deserve it"'.format(phone_number, amount)
     os.system(payment_body)
-    
 
 # ACTION CLASSES 
 class ActionVenmoRequest(Action):
@@ -110,11 +112,9 @@ class ActionConversation(Action):
 
         # conversation model api request
         url = "http://localhost:8080/" + "cakechat_api/v1/actions/get_response"
-        # print(tracker.latest_message['text'])
         r = requests.post(url, json={'context': list(conversation_history), 'emotion': 'anger'})
 
         # return conversation model response
-        # print("CONVERSATION RESPONSE: ", r.text)
         conversation_resp = r.text.split(":")[1][1:-3]
 
         conversation_history.append(conversation_resp)
@@ -133,9 +133,11 @@ class ActionUpdateYourself(Action):
         domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         print("SELF UPDATES TRIGGERED")
-        os.system("cd ~")
-        os.system("cd /Users/Vaibhav/Documents/SideProjects/friday")
-        os.system("git pull")
+        # os.system("cd ~")
+        # os.system("cd /Users/Vaibhav/Documents/SideProjects/friday")
+        # os.system("git pull")
+
+        os.system("rasa train")
 
 
 class ActionPauseSpotify(Action):
@@ -160,3 +162,65 @@ class ActionPlaySpotify(Action):
         domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         spotify.play()
+
+class ActionPlayPlaylistSpotify(Action):
+
+    def name(self) -> Text:
+        return "action_play_playlist_spotify"
+
+    def run(self, dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        playlist_name = tracker.get_slot("music_thing")
+        played = spotify.play_playlist(playlist_name)
+
+        if not played:
+            msg = "I couldn't find the playlist you gave me...try again?"
+            dispatcher.utter_message(msg)
+
+
+class ActionPlayArtistSpotify(Action):
+
+    def name(self) -> Text:
+        return "action_play_artist_spotify"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+            artist = tracker.get_slot("artist")
+            played = spotify.play_artist(artist)
+
+            if not played:
+                msg = "I couldn't find the artist you wanted :/"
+                dispatcher.utter_message(msg)
+
+class ActionRecordSpotifySession(Action):
+
+    def name(self) -> Text:
+        return "action_record_spotify_session"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+            msg = "Got it. Recording tonight's session"
+            spotify.record_spotify_session()
+
+            # thread should be adding songs to a playlist until thread is killed
+
+            dispatcher.utter_message(msg)
+
+class ActionStopRecordingSpotifySession(Action):
+    
+    def name(self) -> Text:
+        return "action_stop_recording_spotify_session"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+            msg = "Got it. Stopping tonight's Spotify session"
+            dispatcher.utter_message(msg)
+            spotify.stop_recording_spotify_session()

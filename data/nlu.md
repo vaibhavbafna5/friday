@@ -123,10 +123,25 @@
 - Perl, update your software
 - Perl, update your brain
 
+- Update yourself
+- Update your software
+- Update your brain
+- Evolve
+- I need you to evolve
+- You need to evolve
+- Please evolve
+- Update your model
+- Fix your model
+- Pull the latest update
+
 - Perl, evolve
 - Perl, I need you to evolve
 - Perl, you need to evolve
 - Perl, please evolve
+
+- Perl, update your model
+- Perl, fix your model
+- Perl, pull the latest update
 
 ## intent:pause_music
 - Pause music
@@ -135,11 +150,11 @@
 - Pause
 - Please pause
 - Pause the music
-- Kill the music
 - Please pause the music
 - Stop the music
 - Please stop the music
 - Pause Spotify
+- Kill the music
 
 ## intent:play_music
 - Play music
@@ -148,6 +163,77 @@
 - Play Spotify
 - Throw some music on
 - Can you put some music on?
+- Play
+- Perl, play music
+- Hit play
+- Hit the play button for me
 
+## intent:play_playlist
+- Play [untitled I](music_thing)
+- Perl, play [untitled I](music_thing)
+- Can you play [wholesome](music_thing)?
+- Perl, can you play [champagne & rain](music_thing)?
+- Play [untitled II](music_thing) from my library on Spotify
+- Play [untitled III](music_thing) from my Spotify library
+- Perl, can you play [oldie goldie](music_thing) from my library on Spotify
+- Perl, can you play [untitled III](music_thing) from my Spotify library
+- Perl, play [untitled II](music_thing) from my library on Spotify
+- Perl, play [untitled III](music_thing) from my Spotify library
 
+## intent:play_artist
+- Play music by [Childish Gambino](artist)
+- Perl, can you play music by [Brockhampton](artist)?
+- Perl, play music by [Summer Walker](artist)
+
+- Play some music by [Brockhampton](artist)
+- Play me some music by [070 Shake](artist)
+- Perl, can you play some music by [88 Rising](artist)
+- Perl, play some music by [Kanye](artist)
+
+- Play songs by [Kendrick Lamar](artist)
+- Perl, play songs by [Young Thug](artist)
+- Perl, can you play songs by [Ella Mai](artist)
+
+- Throw some stuff on by [Crumb](artist)
+- Perl, throw some stuff on by [John Mayer](artist)
+- Perl, can you throw on some music by [J. Cole](artist)
+- Throw on some music by [Ari Lennox](artist)
+
+- Throw something on by [DaBaby](artist)
+- Can you throw on something by [Gunna](artist)?
+- Perl, can you throw on something by [Billie Eilish](artist)?
+- Perl, throw on something by [Adele](artist)
+
+## intent:record_spotify_session
+
+- Perl, can you save what's gonna be played?
+- Perl, can you record tonight's music session?
+- Perl, please start recording tonight's music session
+- Perl, a jam session is about to start
+- Perl, I'm gonna need you to save what's being played
+- Perl, save what's on the aux
+- Perl, can you please save what's on the aux
+
+- Can you start recording what's played?
+- Please start recording this music session
+- Start recording our jam session
+- We're about to have a jam session
+
+## intent:stop_recording_spotify_session
+- Perl, can you stop recording tonight's music session?
+- Perl, please stop recording tonight's music session
+- Perl, I'm gonna need you to stop tonight's music session
+- Perl, stop recording our jam session
+- Perl, quit tonight's jam session
+- Perl, get off the aux
+- Perl, hop off the aux
+
+- Hop off the aux
+- Get off the aux
+- You can stop saving what's being played now
+- You don't have to record what we're playing
+- Can you stop recording what's played?
+- Please stop recording this music session
+- Stop recording our jam session
+- We're about to end our jam session
 

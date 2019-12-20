@@ -7,11 +7,17 @@ slots:
     max_value: 100.0
   query:
     type: text
+  music_thing:
+    type: text
+  artist:
+    type: text
 
 entities:
 - person
 - dollar_amount
 - query
+- music_thing
+- artist
 
 intents:
   - greet
@@ -23,8 +29,13 @@ intents:
   - venmo_request
   - venmo_pay
   - ask_google
+  - update_yourself
   - play_music
   - pause_music
+  - play_playlist
+  - play_artist
+  - record_spotify_session
+  - stop_recording_spotify_session
 
 actions:
 - utter_greet
@@ -37,6 +48,7 @@ actions:
 - utter_venmo_request_confirmation
 - utter_update_self_confirmation
 - utter_spotify_play_confirmation
+- utter_spotify_action_confirmation
 - action_venmo_request
 - action_venmo_pay
 - action_ask_google
@@ -44,6 +56,10 @@ actions:
 - action_update_yourself
 - action_pause_spotify
 - action_play_spotify
+- action_play_playlist_spotify
+- action_play_artist_spotify
+- action_record_spotify_session
+- action_stop_recording_spotify_session
 
 templates:
   utter_greet:
@@ -86,6 +102,17 @@ templates:
   - text: "Well, that hurt"
   - text: "Ouch."
   - text: "That was excruciating."
+  - text: "Oof."
 
   utter_spotify_play_confirmation:
   - text: "Picking right back up where you left off sir"
+  - text: "Yeehaw"
+  - text: "Bam."
+
+  utter_spotify_action_confirmation:
+  - text: "Yeehaw"
+  - text: "Bam."
+  - text: "Of course"
+  - text: "Sure"
+  - text: "Feeling some kind of way, are we sir?"
+  - text: "Here you go."

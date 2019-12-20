@@ -30,7 +30,26 @@
    - action_play_spotify
    - utter_spotify_play_confirmation
 
+## play playlist on Spotify
+* play_playlist
+   - action_play_playlist_spotify
+   - utter_spotify_action_confirmation
+
+## play artist on Spotify
+* play_artist
+    - action_play_artist_spotify
+    - utter_spotify_action_confirmation
+
+## record music session on Spotify
+* record_spotify_session
+    - action_record_spotify_session
+
+## stop recording music session on Spotify
+* stop_recording_spotify_session
+    - action_stop_recording_spotify_session
+
 ## update yourself
 * update_yourself
    - action_update_yourself
    - utter_update_self_confirmation
+
